@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Чек</title>
+</head>
+<body>
+    <h1>ООО "КОМПАНИЯ К"</h1>
+    <p>Добро пожаловать</p>
+    <p>ККМ 00075411 #3969</p>
+    <p>ИНН 1087746942040</p>
+    <p>ЭКЛЗ 3851495566</p>
+    <p>Дата: {{ cur_time }}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th>Количество</th>
+                <th>Стоимость</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>1</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>ИТОГ: {{ total_price }}</h2>
+    <p>НАЛИЧНЫМИ: {{ total_price }}</p>
+    <hr>
+    <p>00003751# 05970</p>
+</body>
+</html>
