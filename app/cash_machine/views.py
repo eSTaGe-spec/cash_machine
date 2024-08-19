@@ -14,6 +14,12 @@ from .models import Item
 
 @api_view(['POST'])
 def cash_machine(request):
+    """
+    Функция для сохранения чека в виде пдф файла и сохранения qr кода на этот чек в виде картинки
+
+    :param request:
+    :return:
+    """
     data = request.data
     item_ids = data.get('items', [])
 
@@ -58,6 +64,12 @@ def cash_machine(request):
 
 
 def return_pdf(request, filepath):
+    """
+    Функция, которая возвращает чек в пдф файле по отсканированному qr коду
+    :param request:
+    :param filepath: -> путь пдф файла
+    :return:
+    """
     file_path = os.path.join(settings.MEDIA_ROOT, filepath)
 
     if not os.path.exists(file_path):
